@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Slideshow</title>
+    <style>
+        /* Overall carousel container */
+        .carousel {
+            width: 100%;
+            max-width: 100%; /* Ensure it takes up full width of parent */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Container that holds the images (flexbox layout) */
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Smooth transition when sliding */
+        }
+
+        /* Individual image styling - Reduced to 50% of the container's width */
+        .carousel-img {
+            width: 50%; /* Set the width to 50% to reduce the size */
+            height: auto;
+            flex-shrink: 0; /* Prevents images from shrinking */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Optional visual effect */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Car Slideshow Section -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="https://i.ytimg.com/vi/tjFr0l4hBdw/maxresdefault.jpg" alt="A perfect car" class="carousel-img">
+        <img src="https://i.pinimg.com/originals/bf/51/8e/bf518e5062acfbe7151ff43c8ee1e997.jpg" alt="Camaro my baby" class="carousel-img">
+        <img src="https://th.bing.com/th/id/R.1fa9ec0b930fce2987bc334d1aa1e7ab?rik=BkTZINmWjY%2fkYA&pid=ImgRaw&r=" alt="Lamborghini Urus" class="carousel-img">
+        <img src="https://www.millermotorcars.com/imagetag/3162/3/l/Used-2019-Rolls-Royce-Cullinan.jpg" alt="Rolls-Royce Cullinan" class="carousel-img">
+    </div>
+</div>
+
+<script>
+    // Variables to manage the slideshow
+    let currentIndex = 0; // Current image index
+    const images = document.querySelectorAll('.carousel-img'); // Select all images
+    const totalImages = images.length; // Total number of images in the carousel
+
+    // Function to show the next image
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % totalImages; // Loop back to first image
+        const carouselImages = document.querySelector('.carousel-images');
+        carouselImages.style.transform = `translateX(-${currentIndex * 50}%)`; // Slide to the next image
+    }
+
+    // Change image every 3 seconds
+    setInterval(showNextImage, 3000); // Change image every 3000 milliseconds (3 seconds)
+</script>
+
+</body>
+</html>
