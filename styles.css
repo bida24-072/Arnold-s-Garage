@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Slideshow</title>
-<link rel="carslideshow.html" href="carslideshow.html">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,9 +87,10 @@
         /* Carousel Styles */
         .carousel {
             width: 100%;
-            max-width: 100%; /* Ensure it takes up full width of parent */
+            max-width: 800px; /* Limit the carousel width */
             overflow: hidden;
             position: relative;
+            margin: 20px auto; /* Center the carousel */
         }
 
         /* Container that holds the images (flexbox layout) */
@@ -99,9 +99,9 @@
             transition: transform 0.5s ease-in-out; /* Smooth transition when sliding */
         }
 
-        /* Individual image styling - Reduced to 50% of the container's width */
+        /* Individual image styling - Full width of the container */
         .carousel-img {
-            width: 50%; /* Set the width to 50% to reduce the size */
+            width: 100%; /* Set the width to 100% to display the full image */
             height: auto;
             flex-shrink: 0; /* Prevents images from shrinking */
             border-radius: 10px;
@@ -131,7 +131,7 @@
     function showNextImage() {
         currentIndex = (currentIndex + 1) % totalImages; // Loop back to first image
         const carouselImages = document.querySelector('.carousel-images');
-        carouselImages.style.transform = `translateX(-${currentIndex * 50}%)`; // Slide to the next image
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`; // Slide to the next image
     }
 
     // Change image every 3 seconds
