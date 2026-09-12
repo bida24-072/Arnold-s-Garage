@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnold's Garage | Muscle, Luxury, Off‑Road & Racing</title>
-    <!-- W3Schools style: clean, responsive, dark garage theme -->
     <style>
-        /* ---------- GLOBAL & RESET (W3Schools inspired) ---------- */
+        /* ---------- GLOBAL & RESET ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
         body {
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            background-color: #0d0d0d;   /* deep garage black */
+            background-color: #0d0d0d;
             color: #e0e0e0;
             line-height: 1.6;
             padding: 20px;
         }
 
-        /* ---------- MAIN CONTAINER (max-width & centering) ---------- */
+        /* ---------- MAIN CONTAINER ---------- */
         .garage-container {
             max-width: 1300px;
             margin: 0 auto;
@@ -32,14 +35,14 @@
             padding: 25px 30px 30px 30px;
         }
 
-        /* ---------- HEADER / BRANDING ---------- */
+        /* ---------- HEADER ---------- */
         .garage-header {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 3px solid #c9a03d;  /* gold accent */
+            border-bottom: 3px solid #c9a03d;
             padding-bottom: 15px;
         }
 
@@ -71,7 +74,7 @@
             border-left: 4px solid #c9a03d;
         }
 
-        /* ---------- NAVIGATION (W3Schools style: flex, hover, active) ---------- */
+        /* ---------- NAVIGATION (WORKING LINKS) ---------- */
         .navbar {
             background-color: #111;
             border-radius: 50px;
@@ -117,7 +120,7 @@
             box-shadow: 0 0 0 2px #fff3d1 inset;
         }
 
-        /* ---------- INTRO / HERO BANNER ---------- */
+        /* ---------- HERO ---------- */
         .hero {
             background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
             border-radius: 18px;
@@ -140,7 +143,7 @@
             max-width: 800px;
         }
 
-        /* ---------- SECTION TITLES ---------- */
+        /* ---------- SECTION TITLES (with anchor offset) ---------- */
         .section-title {
             font-size: 2rem;
             font-weight: 700;
@@ -151,14 +154,10 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            scroll-margin-top: 20px;
         }
 
-        .section-title i {
-            font-size: 2rem;
-            color: #c9a03d;
-        }
-
-        /* ---------- CAR GRID (responsive, W3Schools card style) ---------- */
+        /* ---------- CAR GRID ---------- */
         .car-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -183,6 +182,7 @@
             border-color: #c9a03d;
         }
 
+        /* ---------- CAR IMAGES WITH REAL GRADIENTS ---------- */
         .car-image {
             width: 100%;
             height: 200px;
@@ -197,26 +197,22 @@
             filter: brightness(0.95);
         }
 
-        /* Since we can't use external images, we use CSS gradients + icons to represent cars */
-        /* Muscle car style */
+        /* Distinct visual style for each category */
         .muscle-bg {
             background: linear-gradient(145deg, #3a2c1b, #6b4f2b, #2d1f0e);
             border-bottom: 3px solid #b37b3a;
         }
 
-        /* Luxury car style */
         .luxury-bg {
             background: linear-gradient(145deg, #1e2a32, #2c3e4e, #0f1a22);
             border-bottom: 3px solid #b8b8b8;
         }
 
-        /* Off‑road style */
         .offroad-bg {
             background: linear-gradient(145deg, #1e3a1e, #2d5a2d, #0f2a0f);
             border-bottom: 3px solid #6f9e6f;
         }
 
-        /* Racing style */
         .racing-bg {
             background: linear-gradient(145deg, #3a0f0f, #6b1f1f, #2a0707);
             border-bottom: 3px solid #c94f4f;
@@ -287,7 +283,7 @@
             font-weight: 700;
         }
 
-        /* ---------- README BOX (at bottom) ---------- */
+        /* ---------- README BOX ---------- */
         .readme-box {
             background-color: #0f0f0f;
             border: 1px solid #2e2e2e;
@@ -341,7 +337,7 @@
             padding-top: 20px;
         }
 
-        /* ---------- RESPONSIVE (W3Schools mobile first) ---------- */
+        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 768px) {
             .garage-container {
                 padding: 15px 18px 25px;
@@ -402,7 +398,6 @@
 </head>
 <body>
 
-    <!-- MAIN GARAGE CONTAINER -->
     <div class="garage-container">
 
         <!-- HEADER -->
@@ -416,39 +411,39 @@
             </div>
         </header>
 
-        <!-- NAVIGATION (W3Schools style) -->
+        <!-- NAVIGATION (working anchor links) -->
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="#" class="active">HOME</a></li>
-                <li><a href="#">MUSCLE</a></li>
-                <li><a href="#">LUXURY</a></li>
-                <li><a href="#">OFF‑ROAD</a></li>
-                <li><a href="#">RACING</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#muscle">MUSCLE</a></li>
+                <li><a href="#luxury">LUXURY</a></li>
+                <li><a href="#offroad">OFF‑ROAD</a></li>
+                <li><a href="#racing">RACING</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
 
-        <!-- HERO / INTRO -->
-        <div class="hero">
+        <!-- HERO / HOME ANCHOR -->
+        <div class="hero" id="home">
             <h2>Four breeds. One legendary garage.</h2>
             <p>From tire‑shredding muscle to track‑ready racers — explore our curated collection of automotive excellence.</p>
         </div>
 
-        <!-- ================= MUSCLE CARS SECTION ================= -->
-        <h2 class="section-title">
+        <!-- ================= MUSCLE CARS ================= -->
+        <h2 class="section-title" id="muscle">
             <i>💪</i> MUSCLE CARS
         </h2>
         <div class="car-grid">
 
-            <!-- MUSCLE 1 -->
+            <!-- MUSCLE 1 - Dodge Challenger Hellcat -->
             <div class="car-card">
                 <div class="car-image muscle-bg">
                     <span class="car-tag">MUSCLE</span>
                 </div>
                 <div class="car-info">
-                    <h3>Challenger Hellcat</h3>
-                    <div class="sub">6.2L SUPERCHARGED V8</div>
-                    <p>Raw American muscle. 717 hp of pure adrenaline, rear‑wheel‑drive and a sound that shakes the ground.</p>
+                    <h3>Dodge Challenger Hellcat</h3>
+                    <div class="sub">6.2L SUPERCHARGED HEMI V8</div>
+                    <p>Raw American muscle. 717 hp of pure adrenaline, rear‑wheel‑drive and a supercharger whine that shakes the ground.</p>
                     <div class="specs">
                         <span><i>⚡</i> 0‑60: 3.6s</span>
                         <span><i>🏁</i> 199 mph</span>
@@ -457,7 +452,7 @@
                 </div>
             </div>
 
-            <!-- MUSCLE 2 -->
+            <!-- MUSCLE 2 - Ford Mustang Shelby GT500 -->
             <div class="car-card">
                 <div class="car-image muscle-bg">
                     <span class="car-tag">MUSCLE</span>
@@ -474,7 +469,7 @@
                 </div>
             </div>
 
-            <!-- MUSCLE 3 -->
+            <!-- MUSCLE 3 - Chevrolet Camaro ZL1 -->
             <div class="car-card">
                 <div class="car-image muscle-bg">
                     <span class="car-tag">MUSCLE</span>
@@ -492,13 +487,13 @@
             </div>
         </div>
 
-        <!-- ================= LUXURY CARS SECTION ================= -->
-        <h2 class="section-title">
+        <!-- ================= LUXURY CARS ================= -->
+        <h2 class="section-title" id="luxury">
             <i>👑</i> LUXURY CARS
         </h2>
         <div class="car-grid">
 
-            <!-- LUXURY 1 -->
+            <!-- LUXURY 1 - Mercedes-Maybach S680 -->
             <div class="car-card">
                 <div class="car-image luxury-bg">
                     <span class="car-tag">LUXURY</span>
@@ -515,7 +510,7 @@
                 </div>
             </div>
 
-            <!-- LUXURY 2 -->
+            <!-- LUXURY 2 - Bentley Continental GT -->
             <div class="car-card">
                 <div class="car-image luxury-bg">
                     <span class="car-tag">LUXURY</span>
@@ -532,7 +527,7 @@
                 </div>
             </div>
 
-            <!-- LUXURY 3 -->
+            <!-- LUXURY 3 - Rolls-Royce Phantom -->
             <div class="car-card">
                 <div class="car-image luxury-bg">
                     <span class="car-tag">LUXURY</span>
@@ -550,13 +545,13 @@
             </div>
         </div>
 
-        <!-- ================= OFF‑ROAD CARS SECTION ================= -->
-        <h2 class="section-title">
+        <!-- ================= OFF‑ROAD CARS ================= -->
+        <h2 class="section-title" id="offroad">
             <i>🏔️</i> OFF‑ROAD
         </h2>
         <div class="car-grid">
 
-            <!-- OFFROAD 1 -->
+            <!-- OFFROAD 1 - Jeep Wrangler Rubicon 392 -->
             <div class="car-card">
                 <div class="car-image offroad-bg">
                     <span class="car-tag">OFF‑ROAD</span>
@@ -573,7 +568,7 @@
                 </div>
             </div>
 
-            <!-- OFFROAD 2 -->
+            <!-- OFFROAD 2 - Ford Bronco Raptor -->
             <div class="car-card">
                 <div class="car-image offroad-bg">
                     <span class="car-tag">OFF‑ROAD</span>
@@ -590,7 +585,7 @@
                 </div>
             </div>
 
-            <!-- OFFROAD 3 -->
+            <!-- OFFROAD 3 - Land Rover Defender V8 -->
             <div class="car-card">
                 <div class="car-image offroad-bg">
                     <span class="car-tag">OFF‑ROAD</span>
@@ -608,13 +603,13 @@
             </div>
         </div>
 
-        <!-- ================= RACING CARS SECTION ================= -->
-        <h2 class="section-title">
+        <!-- ================= RACING CARS ================= -->
+        <h2 class="section-title" id="racing">
             <i>🏁</i> RACING CARS
         </h2>
         <div class="car-grid">
 
-            <!-- RACING 1 -->
+            <!-- RACING 1 - Porsche 911 GT3 RS -->
             <div class="car-card">
                 <div class="car-image racing-bg">
                     <span class="car-tag">RACING</span>
@@ -631,7 +626,7 @@
                 </div>
             </div>
 
-            <!-- RACING 2 -->
+            <!-- RACING 2 - Ferrari SF90 Stradale -->
             <div class="car-card">
                 <div class="car-image racing-bg">
                     <span class="car-tag">RACING</span>
@@ -648,7 +643,7 @@
                 </div>
             </div>
 
-            <!-- RACING 3 -->
+            <!-- RACING 3 - McLaren 765LT -->
             <div class="car-card">
                 <div class="car-image racing-bg">
                     <span class="car-tag">RACING</span>
@@ -666,7 +661,64 @@
             </div>
         </div>
 
-       
+        <!-- ================= CONTACT / README (Anchor) ================= -->
+        <div class="readme-box" id="contact">
+            <h2>📘 README — Arnold's Garage Website</h2>
+            <p><strong>Version 1.0</strong> — A responsive, dark‑themed showcase of muscle, luxury, off‑road, and racing cars.</p>
+
+            <h3>🚗 Features</h3>
+            <ul>
+                <li><strong>Four car categories:</strong> Muscle, Luxury, Off‑Road, Racing — each with 3 real, iconic models.</li>
+                <li><strong>W3Schools‑inspired layout:</strong> clean grid, rounded cards, clear navigation, hover effects.</li>
+                <li><strong>Dark garage theme:</strong> deep blacks, gold accents (#c9a03d), and subtle gradients.</li>
+                <li><strong>Responsive design:</strong> adapts from desktop to mobile (flex + grid).</li>
+                <li><strong>Interactive navigation:</strong> working anchor links, active state, hover scaling, and smooth scroll.</li>
+                <li><strong>No external images:</strong> car visuals are created with CSS gradients and icons — lightweight and fast.</li>
+            </ul>
+
+            <h3>🛠️ Technologies Used</h3>
+            <ul>
+                <li>HTML5 — semantic structure</li>
+                <li>CSS3 — Flexbox, Grid, transitions, gradients, media queries</li>
+                <li>W3Schools layout principles — max‑width container, padding, rounded corners, card style</li>
+            </ul>
+
+            <h3>📂 File Structure</h3>
+            <ul>
+                <li><code>index.html</code> — single‑file website (HTML + CSS in one).</li>
+                <li>No external dependencies, fonts, or images — fully self‑contained.</li>
+            </ul>
+
+            <h3>🚀 How to Use</h3>
+            <ul>
+                <li>Open the HTML file in any modern browser (Chrome, Firefox, Edge, Safari).</li>
+                <li>Click navigation links to jump to sections — all buttons work and scroll smoothly.</li>
+                <li>Hover over car cards to see a subtle lift and gold border effect.</li>
+            </ul>
+
+            <h3>📝 Notes</h3>
+            <ul>
+                <li>Car specifications are based on real‑world models for authenticity.</li>
+                <li>Designed as a single‑page template; sections are ready to be split into separate pages if needed.</li>
+                <li>All colors and styling follow a consistent "garage" aesthetic — dark, metallic, premium.</li>
+            </ul>
+
+            <p style="margin-top: 20px; color: #888; font-style: italic;">© 2025 Arnold's Garage — Built with passion for machines.</p>
+
+            <h3>📬 Contact</h3>
+            <ul>
+                <li>📧 <strong>Email:</strong> hello@arnoldsgarage.example</li>
+                <li>🌐 <strong>Website:</strong> arnoldsgarage.example</li>
+                <li>📍 <strong>Location:</strong> 42 Piston Avenue, Motor City</li>
+            </ul>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-note">
+            ⚡ Arnold's Garage — Muscle, Luxury, Off‑Road & Racing ⚡
+        </div>
+
+    </div>
 
 </body>
 </html>
